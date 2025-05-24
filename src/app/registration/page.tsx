@@ -41,11 +41,7 @@ const Registration: React.FC = () => {
             value={regName}
             onChange={(e) => setRegName(e.target.value)}
           />
-          <button
-            type="submit"
-            value="Submit"
-            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow transition duration-300 cursor-pointer"
-          >
+          <button type="submit" value="Submit" className="btn">
             Submit
           </button>
         </div>

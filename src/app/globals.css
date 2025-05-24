@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@layer base {
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-xl font-bold;
+  }
+}
+
+@layer components {
+  .navbutton {
+    @apply uppercase border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6;
+  }
+  .btn {
+    @apply bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow transition duration-300 cursor-pointer;
+  }
+  .mainimage {
+    background-color: cyan;
+    background-image: url("/tegan-mierle-fDostElVhN8-unsplash.jpg");
+    background-position: center;
+    color: white;
+    height: 400px;
+    width: 100vw;
+  }
+}

@@ -24,27 +24,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const navButtonStyle =
-    "border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6";
-
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-shadow-sm">Camp THRIVE</h1>
+          <h1 className="text-shadow-sm">Camp THRIVE</h1>
           <Navigation>
-            <Link href="/#aim" className={navButtonStyle}>
+            <Link href="/#aim" className="navbutton">
               About camp
             </Link>
-            <Link href="/#upcoming" className={navButtonStyle}>
+            <Link href="/#upcoming" className="navbutton">
               Next camp
             </Link>
-            <Link href="/registration" className={navButtonStyle}>
+            <Link href="/registration" className="navbutton">
               Register
             </Link>
-            <Link href="/list" className={navButtonStyle}>
+            <Link href="/list" className="navbutton">
               List of registrations
             </Link>
           </Navigation>
