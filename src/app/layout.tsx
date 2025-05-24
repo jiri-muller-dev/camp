@@ -41,6 +41,9 @@ export default function RootLayout({
             <Link href="/#upcoming" className={navButtonStyle}>
               Next camp
             </Link>
+            <Link href="/registration" className={navButtonStyle}>
+              Register
+            </Link>
             <Link href="/list" className={navButtonStyle}>
               List of registrations
             </Link>

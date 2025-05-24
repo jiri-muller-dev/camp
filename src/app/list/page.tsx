@@ -44,7 +44,7 @@ const RegistarationsList = () => {
 
   return (
     <div>
-      <h2>Document List</h2>
+      <h2>List of registrations:</h2>
       <ul>
         {documents.map((doc) => (
           <li key={doc.id} className="border-b-gray-300 border-b-2">
