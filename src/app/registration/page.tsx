@@ -28,29 +28,31 @@ const Registration: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2>New registration:</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            name="fullname"
-            id="input_name"
-            placeholder="Enter name of attendee"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            value={regName}
-            onChange={(e) => setRegName(e.target.value)}
-          />
-          <button type="submit" value="Submit" className="btn">
-            Submit
-          </button>
-        </div>
-      </form>
-      {error && <div style={{ color: "red" }}>Error: {error}</div>}
-      {success && (
-        <div style={{ color: "green" }}>Registration successful!</div>
-      )}
-    </div>
+    <main className="flex flex-col items-center">
+      <div className="font-mono p-6 max-w-screen-md">
+        <h2>New registration:</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <input
+              type="text"
+              name="fullname"
+              id="input_name"
+              placeholder="Enter name of attendee"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={regName}
+              onChange={(e) => setRegName(e.target.value)}
+            />
+            <button type="submit" value="Submit" className="btn">
+              Submit
+            </button>
+          </div>
+        </form>
+        {error && <div style={{ color: "red" }}>Error: {error}</div>}
+        {success && (
+          <div style={{ color: "green" }}>Registration successful!</div>
+        )}
+      </div>
+    </main>
   );
 };
 

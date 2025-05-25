@@ -25,10 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body>
         <div className="text-center">
-          <h1 className="text-shadow-sm">Camp THRIVE</h1>
+          <h1 className="text-shadow-sm text-4xl mt-6">Camp THRIVE</h1>
           <Navigation>
             <Link href="/#aim" className="navbutton">
               About camp
@@ -44,7 +44,7 @@ export default function RootLayout({
             </Link>
           </Navigation>
         </div>
-        {children}
+        <div>{children}</div>
       </body>
     </html>
   );

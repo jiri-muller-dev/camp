@@ -1,27 +1,62 @@
+@font-face {
+  font-family: "Indie Flower";
+  src: url("/IndieFlower.woff2") format("woff2"),
+    url("/IndieFlower.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("/PermanentMarker-Regular.woff2") format("woff2"),
+    url("/PermanentMarker-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Trade Winds";
+  src: url("/TradeWinds.woff2") format("woff2"),
+    url("/TradeWinds.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Trade Winds", system-ui;
+  --font-marker: "Permanent Marker", cursive;
+  --font-sans: "Indie Flower", cursive;
+}
 
 @layer base {
   h1 {
-    @apply text-3xl;
+    @apply text-3xl font-display;
   }
   h2 {
-    @apply text-xl font-bold;
+    @apply text-xl font-marker;
+  }
+  p {
+    @apply text-xl;
   }
 }
 
 @layer components {
   .navbutton {
-    @apply uppercase border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6;
+    @apply uppercase font-marker text-lg border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6;
   }
   .btn {
     @apply bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow transition duration-300 cursor-pointer;
   }
   .mainimage {
     background-color: cyan;
-    background-image: url("/tegan-mierle-fDostElVhN8-unsplash.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
+      url("/tegan-mierle-fDostElVhN8-unsplash.jpg");
     background-position: center;
     color: white;
     height: 400px;
     width: 100vw;
+    overflow-x: hidden;
   }
 }

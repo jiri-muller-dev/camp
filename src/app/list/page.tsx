@@ -43,17 +43,19 @@ const RegistarationsList = () => {
   }
 
   return (
-    <div>
-      <h2>List of registrations:</h2>
-      <ul>
-        {documents.map((doc) => (
-          <li key={doc.id} className="border-b-gray-300 border-b-2">
-            <strong>ID:</strong> {doc.id} <br />
-            <strong>Data:</strong> {JSON.stringify(doc)}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <main className="flex flex-col items-center">
+      <div className="font-mono p-6 max-w-screen-md">
+        <h2>List of registrations:</h2>
+        <ul>
+          {documents.map((doc) => (
+            <li key={doc.id} className="border-b-gray-300 border-b-2">
+              <strong>ID:</strong> {doc.id} <br />
+              <strong>Data:</strong> {JSON.stringify(doc)}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </main>
   );
 };
 
