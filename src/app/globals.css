@@ -35,19 +35,25 @@
     @apply text-3xl font-display;
   }
   h2 {
-    @apply text-xl font-marker;
+    @apply text-2xl font-marker sm:text-4xl text-gray-900 font-semibold;
   }
   p {
-    @apply text-xl;
+    @apply text-xl sm:text-2xl text-justify;
+  }
+  ul {
+    @apply bg-[hsl(226.7,20.9%,98%)] text-xl text-left px-4 py-2;
+  }
+  li {
+    @apply list-disc list-inside;
   }
 }
 
 @layer components {
   .navbutton {
-    @apply uppercase font-marker text-lg border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6;
+    @apply uppercase font-marker text-lg border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-[#cbcfdd] mx-1.5 sm:mx-6;
   }
   .btn {
-    @apply bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow transition duration-300 cursor-pointer;
+    @apply bg-white hover:bg-gray-100 text-gray-800 text-xl font-semibold py-2 px-4 border border-gray-400 rounded shadow transition duration-300 cursor-pointer;
   }
   .mainimage {
     background-color: cyan;

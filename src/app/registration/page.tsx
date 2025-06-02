@@ -29,10 +29,12 @@ const Registration: React.FC = () => {
 
   return (
     <main className="flex flex-col items-center">
-      <div className="font-mono p-6 max-w-screen-md">
-        <h2>New registration:</h2>
+      <div className="font-mono p-6 mt-4 max-w-screen-md w-full bg-white">
+        <h2>New registration</h2>
+        <p className="my-2 text-base">Please remember the requirements</p>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="grid sm:grid-cols-2 gap-y-1">
+            <label>Name of attendee:</label>
             <input
               type="text"
               name="fullname"
@@ -42,10 +44,29 @@ const Registration: React.FC = () => {
               value={regName}
               onChange={(e) => setRegName(e.target.value)}
             />
-            <button type="submit" value="Submit" className="btn">
-              Submit
-            </button>
+            <label>Date of birth:</label>
+            <input
+              type="text"
+              className="bg-teal-100 focus:bg-green-100 border-b-2 border-black px-1"
+            />
+            <label>Address:</label>
+            <input type="text" />
+            <label>National identification number:</label>
+            <input type="text" />
+            <label>Health insurance company:</label>
+            <input type="text" />
+            <label>Health concerns:</label>
+            <input type="text" />
+            <label>Dietary restrictions:</label>
+            <input type="text" />
+            <label>Phone number of attendee:</label>
+            <input type="text" />
+            <label>T-shirt size:</label>
+            <input type="text" />
           </div>
+          <button type="submit" value="Submit" className="btn">
+            Submit
+          </button>
         </form>
         {error && <div style={{ color: "red" }}>Error: {error}</div>}
         {success && (

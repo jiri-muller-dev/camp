@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Navigation from "./components/Navigation";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,12 +8,12 @@ export default function Home() {
         <section>
           <div className="mainimage flex justify-center items-center">
             <div className="max-w-screen-md px-3">
-              <p className="uppercase text-2xl font-marker">
+              <h1 className="uppercase text-2xl font-marker">
                 Summer youth camp
-              </p>
-              <h1 className="text-7xl mb-8 font-sans">
-                Find a place for friendship, adventure and growth!
               </h1>
+              <p className="text-3xl sm:text-[5vw] xl:text-6xl text-center mb-8 font-sans max-w-[70vw]">
+                Find a place for friendship, adventure and growth!
+              </p>
               <a href="#" className="btn">
                 See details
               </a>
@@ -22,58 +22,49 @@ export default function Home() {
         </section>
 
         <section className="max-w-screen-xl px-3 pb-16">
-          <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
-              <div>
-                <div className="max-w-lg md:max-w-none">
-                  <h2
-                    className="text-2xl font-semibold text-gray-900 sm:text-3xl"
-                    id="aim"
-                  >
-                    Aim
-                  </h2>
+          <div className="mx-auto max-w-screen-xl my-15 px-4 py-8 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 items-center justify-items-center md:gap-8">
+              <div className="max-w-lg md:max-w-none">
+                <h2 id="aim">Aim</h2>
 
-                  <p className="mt-4 text-gray-700">
-                    Our mission is to create an exciting and safe environment
-                    for all. We believe that summer shouldn't be just about nice
-                    weather and not going to school, we see summer as an
-                    opportunity to try new things and learn in new ways. We want
-                    to provide to an interesting spectrum of activities, ranging
-                    from athletic to intellectual, making our camp a place to
-                    truly thrive.
-                  </p>
-                </div>
+                <p className="mt-4 text-gray-700">
+                  Our mission is to create an exciting and safe environment for
+                  all. We believe that summer shouldn&apos;t be just about nice
+                  weather and not going to school, we see summer as an
+                  opportunity to try new things and learn in new ways. We want
+                  to provide to an interesting spectrum of activities, ranging
+                  from athletic to intellectual, making our camp a place to
+                  truly thrive.
+                </p>
               </div>
 
               <div>
-                <img
+                <Image
                   src="/anderson-schmig-f7b6WX_p1N0-unsplash.jpg"
+                  width={2400}
+                  height={1350}
                   alt="Group of people on hike"
-                  className="rounded"
+                  className="rounded shadow-2xl -rotate-1"
                 />
               </div>
             </div>
           </div>
 
-          <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+          <div className="mx-auto max-w-screen-xl my-15 px-4 py-8 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8 justify-items-center">
               <div>
-                <img
+                <Image
                   src="/jesus-loves-austin-TqHDqXkWSCk-unsplash.jpg"
+                  width={1633}
+                  height={1089}
                   alt="Children playing a board game"
-                  className="rounded"
+                  className="rounded shadow-2xl rotate-1"
                 />
               </div>
 
               <div>
                 <div className="max-w-lg md:max-w-none">
-                  <h2
-                    className="text-2xl font-semibold text-gray-900 sm:text-3xl"
-                    id="activities"
-                  >
-                    Activities
-                  </h2>
-
+                  <h2 id="activities">Activities</h2>
                   <p>Move your body! Train your brain! Try something new!</p>
                   <ul>
                     <li>Hiking</li>
@@ -88,20 +79,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-4 md:items-center md:gap-8">
+          <div className="mx-auto max-w-screen-xl my-15 px-4 py-8 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-4 md:items-center md:gap-8 justify-items-center">
               <div>
                 <div className="max-w-lg md:max-w-none">
-                  <h2
-                    className="text-2xl font-semibold text-gray-900 sm:text-3xl"
-                    id="upcoming"
-                  >
-                    Upcoming event
-                  </h2>
+                  <h2 id="upcoming">Upcoming event</h2>
                   <ul className="my-5">
                     <li>Date and Countdown</li>
                     <li>Map and place</li>
-                    <li>Requirements (age)</li>
+                    <li>Requirements (age, price)</li>
                     <li>Includes (meals, material for crafts, camp tshirt)</li>
                   </ul>
 
@@ -152,16 +138,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-4 md:items-center md:gap-8">
+          <div className="mx-auto max-w-screen-xl my-15 px-4 py-8 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-4 md:items-center md:gap-8 justify-items-center">
               <div>
                 <div className="max-w-lg md:max-w-none">
-                  <h2
-                    className="text-2xl font-semibold text-gray-900 sm:text-3xl"
-                    id="upcoming"
-                  >
-                    Lorem
-                  </h2>
+                  <h2 id="upcoming">Lorem</h2>
                   <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Delectus reiciendis unde quaerat hic tempora, incidunt

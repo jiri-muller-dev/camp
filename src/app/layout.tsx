@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Permanent_Marker } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const permanentMarker = Permanent_Marker({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-marker2",
 });
 
 export const metadata: Metadata = {
@@ -26,11 +22,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body>
+      <body className="bg-[hsl(46,21%,83%)]">
         <div className="text-center">
-          <h1 className="text-shadow-sm text-4xl mt-6">Camp THRIVE</h1>
+          <img
+            src="/logo-v1-camp-thrive.png"
+            className="mx-auto my-4 max-h-40"
+          />
           <Navigation>
-            <Link href="/#aim" className="navbutton">
+            <Link
+              href="/#aim"
+              className={`navbutton ${permanentMarker.variable}`}
+            >
               About camp
             </Link>
             <Link href="/#upcoming" className="navbutton">

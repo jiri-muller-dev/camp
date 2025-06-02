@@ -35,11 +35,19 @@ const RegistarationsList = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <main className="flex flex-col items-center">
+        <div className="font-mono p-6 max-w-screen-md">Loading...</div>
+      </main>
+    );
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <main className="flex flex-col items-center">
+        <div className="font-mono p-6 max-w-screen-md">Error: {error}</div>
+      </main>
+    );
   }
 
   return (
