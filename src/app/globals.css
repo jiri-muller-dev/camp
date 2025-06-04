@@ -46,6 +46,12 @@
   li {
     @apply list-disc list-inside;
   }
+  input[type="text"] {
+    @apply bg-teal-100 focus:bg-green-100 border-b-2 border-black px-1 font-mono;
+  }
+  label {
+    @apply pr-1 mt-2 sm:mt-0;
+  }
 }
 
 @layer components {
@@ -53,7 +59,7 @@
     @apply uppercase font-marker text-lg border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-[#cbcfdd] mx-1.5 sm:mx-6;
   }
   .btn {
-    @apply bg-white hover:bg-gray-100 text-gray-800 text-xl font-semibold py-2 px-4 border border-gray-400 rounded shadow transition duration-300 cursor-pointer;
+    @apply bg-white hover:bg-gray-100 text-gray-800 text-xl font-semibold py-2 px-4 border hover:border-2 m-[1px] hover:m-0 border-gray-400 rounded shadow transition duration-300 cursor-pointer;
   }
   .mainimage {
     background-color: cyan;
