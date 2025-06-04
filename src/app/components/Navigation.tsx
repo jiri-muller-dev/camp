@@ -4,7 +4,7 @@ const Navigation: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
   return (
-    <nav className="bg-white shadow dark:bg-gray-800">
+    <nav className="bg-white shadow dark:bg-gray-800 sticky top-0 z-10">
       <div className="container flex max-md:flex-col max-md:gap-6 whitespace-nowrap items-center justify-around p-6 mx-auto max-w-screen-xl text-gray-600 capitalize dark:text-gray-300">
         {children}
       </div>

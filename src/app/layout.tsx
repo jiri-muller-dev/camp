@@ -28,24 +28,24 @@ export default function RootLayout({
             src="/logo-v1-camp-thrive.png"
             className="mx-auto my-4 max-h-40"
           />
-          <Navigation>
-            <Link
-              href="/#aim"
-              className={`navbutton ${permanentMarker.variable}`}
-            >
-              About camp
-            </Link>
-            <Link href="/#upcoming" className="navbutton">
-              Next camp
-            </Link>
-            <Link href="/registration" className="navbutton">
-              Register
-            </Link>
-            <Link href="/list" className="navbutton">
-              List of registrations
-            </Link>
-          </Navigation>
         </div>
+        <Navigation>
+          <Link
+            href="/#aim"
+            className={`navbutton ${permanentMarker.variable}`}
+          >
+            About camp
+          </Link>
+          <Link href="/#upcoming" className="navbutton">
+            Next camp
+          </Link>
+          <Link href="/registration" className="navbutton">
+            Register
+          </Link>
+          <Link href="/list" className="navbutton">
+            List of registrations
+          </Link>
+        </Navigation>
         <div>{children}</div>
       </body>
     </html>

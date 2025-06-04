@@ -36,6 +36,7 @@
   }
   h2 {
     @apply text-2xl font-marker sm:text-4xl text-gray-900 font-semibold;
+    scroll-margin-top: 86px;
   }
   p {
     @apply text-xl sm:text-2xl text-justify;
