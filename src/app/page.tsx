@@ -52,6 +52,26 @@ export default function Home() {
 
           <div className="mx-auto max-w-screen-xl my-15 px-4 py-8 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8 justify-items-center">
+              <div className="order-none md:order-1">
+                <div className="max-w-lg md:max-w-none">
+                  <h2 id="activities">Activities</h2>
+                  <p className="text-center">
+                    Move&nbsp;your&nbsp;body! Train&nbsp;your&nbsp;brain!
+                    Try&nbsp;something&nbsp;new!
+                  </p>
+                  <div className="mt-2 w-max mx-auto">
+                    <p className="text-center">Our camp activities include:</p>
+                    <ul className="w-full">
+                      <li>Hiking</li>
+                      <li>Yoga</li>
+                      <li>Climbing</li>
+                      <li>Board games</li>
+                      <li>Writing workshop</li>
+                      <li>Meditation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
               <div>
                 <Image
                   src="/jesus-loves-austin-TqHDqXkWSCk-unsplash.jpg"
@@ -60,21 +80,6 @@ export default function Home() {
                   alt="Children playing a board game"
                   className="rounded shadow-2xl rotate-1"
                 />
-              </div>
-
-              <div>
-                <div className="max-w-lg md:max-w-none">
-                  <h2 id="activities">Activities</h2>
-                  <p>Move your body! Train your brain! Try something new!</p>
-                  <ul>
-                    <li>Hiking</li>
-                    <li>Yoga</li>
-                    <li>Climbing</li>
-                    <li>Board games</li>
-                    <li>Writing workshop</li>
-                    <li>Meditation</li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>

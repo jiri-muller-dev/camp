@@ -56,7 +56,7 @@ const RegistarationsList = () => {
         <h2>List of registrations:</h2>
         <ul>
           {documents.map((doc) => (
-            <li key={doc.id} className="border-b-gray-300 border-b-2">
+            <li key={doc.id} className="border-b-gray-300 border-b-2 break-all">
               <strong>ID:</strong> {doc.id} <br />
               <strong>Data:</strong> {JSON.stringify(doc)}
             </li>
