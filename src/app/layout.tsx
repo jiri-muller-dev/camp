@@ -37,7 +37,7 @@ export default function RootLayout({
             About camp
           </Link>
           <Link href="/#upcoming" className="navbutton">
-            Next camp
+            Next session
           </Link>
           <Link href="/registration" className="navbutton">
             Register

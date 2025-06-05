@@ -93,7 +93,7 @@ const Registration: React.FC = () => {
           <div>
             <p className="mt-2 text-base text-left">
               Your registration was successfuly sent to us! <br /> It is now
-              pending and we will sent you you email to{" "}
+              pending and we will send you email to{" "}
               <strong>{formState.values.email}</strong> once it is accepted.
             </p>
           </div>
