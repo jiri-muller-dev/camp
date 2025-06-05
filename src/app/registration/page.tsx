@@ -2,6 +2,7 @@
 
 import React from "react";
 import sendRegistration from "./validation";
+import FormField from "../components/FormField";
 
 interface FormData {
   [key: string]: string;
@@ -36,9 +37,9 @@ const Registration: React.FC = () => {
               Please pay attention to the following requirements:
             </p>
             <ul className="bg-white/0 text-base p-0 mb-4">
-              <li>Attendee must be within 12 and 17 years of age.</li>
+              <li>Participant must be within 12 and 17 years of age.</li>
               <li>
-                Attendee must be able physically and mentally able to
+                Participant must be able physically and mentally able to
                 participate.
               </li>
               <li>
@@ -47,34 +48,44 @@ const Registration: React.FC = () => {
               </li>
             </ul>
             <form action={formAction}>
-              <h3>Attendee:</h3>
               <div className="grid sm:grid-cols-[max-content_1fr] gap-y-1 mb-4 sm:gap-y-2">
-                <label>Full name:</label>
-                <input
+                <h3 className="sm:col-span-2">Participant:</h3>
+                <FormField
+                  label="Full name"
                   type="text"
-                  name="fullname"
+                  fieldName="fullname"
                   placeholder="full name"
-                  value={formData.fullname}
+                  data={formData}
                   onChange={handleChange}
-                  required
+                  required={true}
                 />
-                <label>Date of birth:</label>
-                <input
+                <FormField
+                  label="Date of birth"
                   type="date"
-                  name="dateofbirth"
+                  fieldName="dateofbirth"
                   placeholder="DD.MM.YYYY"
-                  value={formData.dateofbirth}
+                  data={formData}
                   onChange={handleChange}
-                  required
+                  required={true}
                 />
-                <label>Contact email:</label>
-                <input
+                <h3 className="sm:col-span-2">Legal guardian:</h3>
+                <FormField
+                  label="Contact email"
                   type="email"
-                  name="email"
+                  fieldName="email"
                   placeholder="e-mail address"
-                  value={formData.email}
+                  data={formData}
                   onChange={handleChange}
-                  required
+                  required={true}
+                />
+                <FormField
+                  label="Phone number"
+                  type="tel"
+                  fieldName="phonenumber"
+                  placeholder="+420 XXX XXX XXX"
+                  data={formData}
+                  onChange={handleChange}
+                  required={true}
                 />
               </div>
 

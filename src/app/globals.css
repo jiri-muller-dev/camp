@@ -50,13 +50,6 @@
   li {
     @apply list-disc list-inside;
   }
-  input[type="text"],
-  input {
-    @apply bg-teal-100 focus:bg-green-100 border-b-2 border-black px-1 font-mono;
-  }
-  label {
-    @apply pr-1 mt-2 sm:mt-0;
-  }
 }
 
 @layer components {

@@ -19,12 +19,12 @@ export default async function sendRegistration(_: unknown, formData: FormData) {
     fullname: String(formData.get("fullname")),
     dateofbirth: new Date(String(formData.get("dateofbirth"))),
     email: String(formData.get("email")),
+    phonenumber: formData.get("phonenumber"),
     address: formData.get("address"),
     nin: formData.get("nin"),
     insurance: formData.get("insurance"),
     healthnotes: formData.get("healthnotes"),
     dietnotes: formData.get("dietnotes"),
-    phonenumber: formData.get("phonenumber"),
     tshirtsize: formData.get("tshirtsize"),
   };
 
