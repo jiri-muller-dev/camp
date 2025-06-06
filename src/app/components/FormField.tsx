@@ -34,7 +34,9 @@ const FormField: React.FC<FieldProps> = ({
 
   return (
     <>
-      <label className="pr-3">{label}:</label>
+      <label className="pr-3" htmlFor={fieldName}>
+        {label}:
+      </label>
       <input
         {...inputProps}
         className="bg-teal-100 focus:bg-green-100 border-b-2 border-black px-1 mb-3 sm:mb-0 font-mono"

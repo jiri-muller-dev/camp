@@ -57,7 +57,7 @@ const Registration: React.FC = () => {
                   placeholder="full name"
                   data={formData}
                   onChange={handleChange}
-                  required={true}
+                  required
                 />
                 <FormField
                   label="Date of birth"
@@ -66,7 +66,7 @@ const Registration: React.FC = () => {
                   placeholder="DD.MM.YYYY"
                   data={formData}
                   onChange={handleChange}
-                  required={true}
+                  required
                 />
                 <h3 className="sm:col-span-2">Legal guardian:</h3>
                 <FormField
@@ -76,7 +76,7 @@ const Registration: React.FC = () => {
                   placeholder="e-mail address"
                   data={formData}
                   onChange={handleChange}
-                  required={true}
+                  required
                 />
                 <FormField
                   label="Phone number"
@@ -85,7 +85,7 @@ const Registration: React.FC = () => {
                   placeholder="+420 XXX XXX XXX"
                   data={formData}
                   onChange={handleChange}
-                  required={true}
+                  required
                 />
               </div>
 
