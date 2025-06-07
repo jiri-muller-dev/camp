@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "../firebase";
-import { campStartDate } from "../details";
+import { campMaxAge, campMinAge, campStartDate } from "../details";
 import {
   collection,
   addDoc,
@@ -44,9 +44,8 @@ export default async function sendRegistration(_: unknown, formData: FormData) {
   }
 
   const campDate = new Date(campStartDate);
-  const minAge = 12;
   const minAgeDate = new Date(campDate);
-  minAgeDate.setFullYear(campDate.getFullYear() - minAge);
+  minAgeDate.setFullYear(campDate.getFullYear() - campMinAge);
   if (dob > minAgeDate) {
     return {
       success: false,
@@ -54,9 +53,8 @@ export default async function sendRegistration(_: unknown, formData: FormData) {
       values: formValues,
     };
   }
-  const maxAge = 17;
   const maxAgeDate = new Date(campDate);
-  maxAgeDate.setFullYear(campDate.getFullYear() - maxAge);
+  maxAgeDate.setFullYear(campDate.getFullYear() - campMaxAge);
   if (dob < maxAgeDate) {
     return {
       success: false,

@@ -1,7 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { campStartDate, campTitle } from './details'
+import {
+  campStartDate,
+  campEndDate,
+  campTitle,
+  campMinAge,
+  campMaxAge,
+  campPrice,
+} from './details'
 import Countdown from './components/Countdown'
+import { format } from 'date-fns'
 
 export default function Home() {
   return (
@@ -94,11 +102,18 @@ export default function Home() {
                   <p className="mt-4 text-center text-4xl uppercase">
                     {campTitle}
                   </p>
-                  <p className="text-center text-2xl">for kids ages 12 to 17</p>
-                  <p className="text-center text-4xl">10. 7. - 17. 7. 2025</p>
+                  <p className="text-center text-2xl">
+                    for kids ages {String(campMinAge)} to {String(campMaxAge)}
+                  </p>
+                  <p className="text-center text-4xl">
+                    {format(campStartDate, 'd. M.')} -{' '}
+                    {format(campEndDate, 'd. M. yyyy')}
+                  </p>
                   <p className="text-center text-2xl">that&apos;s in</p>
                   <Countdown targetDate={new Date(campStartDate)} />
-                  <p className="mb-5 text-center text-2xl">price is 5000 Kč</p>
+                  <p className="mb-5 text-center text-2xl">
+                    for the price of {String(campPrice)} Kč
+                  </p>
 
                   <Link href="/registration" className="btn mt-5">
                     Enroll now!
@@ -122,6 +137,23 @@ export default function Home() {
 
               <div className="w-full">
                 <div className="h-[300px] w-full bg-white text-center">map</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mx-auto my-15 max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 justify-items-center gap-4 md:items-center md:gap-8">
+              <div>
+                <div className="max-w-lg md:max-w-none">
+                  <h2 id="contact">Contact</h2>
+                  <p className="mt-4 max-w-screen-sm text-gray-700">
+                    If you have any further questions you want to discuss,
+                    please do not contact us. This camp is purely fictional for
+                    the puposes of learning frontend development and thus we
+                    will not be able to answer your questions.
+                  </p>
+                  <code className="mt-4 block">jiri.muller.dev@gmail.com</code>
+                </div>
               </div>
             </div>
           </div>
