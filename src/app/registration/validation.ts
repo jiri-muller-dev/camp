@@ -5,7 +5,6 @@ import { campStartDate } from "../details";
 import {
   collection,
   addDoc,
-  DocumentData,
   serverTimestamp,
 } from "firebase/firestore";
 
@@ -14,18 +13,17 @@ function isValidEmail(email: string) {
   return emailPattern.test(email);
 }
 
+const isValidPhoneNumber = (phone:string) => {
+  const phonePattern = /^\+?[1-9][\d ]{1,18}$/;
+  return phonePattern.test(phone);
+};
+
 export default async function sendRegistration(_: unknown, formData: FormData) {
   const formValues = {
     fullname: String(formData.get("fullname")),
-    dateofbirth: new Date(String(formData.get("dateofbirth"))),
+    dateofbirth: formData.get("dateofbirth"),
     email: String(formData.get("email")),
-    phonenumber: formData.get("phonenumber"),
-    address: formData.get("address"),
-    nin: formData.get("nin"),
-    insurance: formData.get("insurance"),
-    healthnotes: formData.get("healthnotes"),
-    dietnotes: formData.get("dietnotes"),
-    tshirtsize: formData.get("tshirtsize"),
+    phonenumber: String(formData.get("phonenumber")),
   };
 
   if (formValues.fullname.length <= 2) {
@@ -35,7 +33,9 @@ export default async function sendRegistration(_: unknown, formData: FormData) {
       values: formValues,
     };
   }
-  if (isNaN(formValues.dateofbirth.getTime())) {
+
+  const dob = new Date(String(formData.get("dateofbirth")))
+  if (isNaN(dob.getTime())) {
     return {
       success: false,
       message: "Invalid date of birth",
@@ -47,7 +47,7 @@ export default async function sendRegistration(_: unknown, formData: FormData) {
   const minAge = 12;
   const minAgeDate = new Date(campDate);
   minAgeDate.setFullYear(campDate.getFullYear() - minAge);
-  if (formValues.dateofbirth > minAgeDate) {
+  if (dob > minAgeDate) {
     return {
       success: false,
       message: "Age below the minimum age requirements",
@@ -57,7 +57,7 @@ export default async function sendRegistration(_: unknown, formData: FormData) {
   const maxAge = 17;
   const maxAgeDate = new Date(campDate);
   maxAgeDate.setFullYear(campDate.getFullYear() - maxAge);
-  if (formValues.dateofbirth < maxAgeDate) {
+  if (dob < maxAgeDate) {
     return {
       success: false,
       message: "Age above the maximum age requirements",
@@ -69,6 +69,14 @@ export default async function sendRegistration(_: unknown, formData: FormData) {
     return {
       success: false,
       message: "Invalid e-mail address",
+      values: formValues,
+    };
+  }
+
+  if (!isValidPhoneNumber(formValues.phonenumber)) {
+    return {
+      success: false,
+      message: "Invalid phone number",
       values: formValues,
     };
   }

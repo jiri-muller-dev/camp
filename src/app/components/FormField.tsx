@@ -1,17 +1,12 @@
 import React from "react";
 
-interface FormData {
-  [key: string]: string;
-}
-
 interface FieldProps {
   label: string;
   placeholder?: string;
   type?: string;
   fieldName: string;
   required?: boolean;
-  data: FormData;
-  onChange: any;
+  defaultValue: any;
 }
 
 const FormField: React.FC<FieldProps> = ({
@@ -19,17 +14,15 @@ const FormField: React.FC<FieldProps> = ({
   placeholder = "",
   type = "text",
   fieldName,
+  defaultValue,
   required = false,
-  data,
-  onChange,
 }) => {
   const inputProps = {
     type,
     placeholder,
     name: fieldName,
+    defaultValue,
     required,
-    value: data[fieldName],
-    onChange: onChange,
   };
 
   return (

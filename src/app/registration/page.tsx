@@ -9,23 +9,7 @@ interface FormData {
 }
 
 const Registration: React.FC = () => {
-  const [formState, formAction, isPending] = React.useActionState(
-    sendRegistration,
-    null
-  );
-  const [formData, setFormData] = React.useState<FormData>({
-    fullname: "",
-    dateofbirth: "",
-    email: "",
-  });
-
-  const handleChange = (event: any) => {
-    const { name, value } = event.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const [formState, formAction] = React.useActionState(sendRegistration, null);
 
   return (
     <main className="flex flex-col items-center">
@@ -55,8 +39,7 @@ const Registration: React.FC = () => {
                   type="text"
                   fieldName="fullname"
                   placeholder="full name"
-                  data={formData}
-                  onChange={handleChange}
+                  defaultValue={formState?.values.fullname}
                   required
                 />
                 <FormField
@@ -64,8 +47,7 @@ const Registration: React.FC = () => {
                   type="date"
                   fieldName="dateofbirth"
                   placeholder="DD.MM.YYYY"
-                  data={formData}
-                  onChange={handleChange}
+                  defaultValue={formState?.values.dateofbirth}
                   required
                 />
                 <h3 className="sm:col-span-2">Legal guardian:</h3>
@@ -74,8 +56,7 @@ const Registration: React.FC = () => {
                   type="email"
                   fieldName="email"
                   placeholder="e-mail address"
-                  data={formData}
-                  onChange={handleChange}
+                  defaultValue={formState?.values.email}
                   required
                 />
                 <FormField
@@ -83,8 +64,7 @@ const Registration: React.FC = () => {
                   type="tel"
                   fieldName="phonenumber"
                   placeholder="+420 XXX XXX XXX"
-                  data={formData}
-                  onChange={handleChange}
+                  defaultValue={formState?.values.phonenumber}
                   required
                 />
               </div>
