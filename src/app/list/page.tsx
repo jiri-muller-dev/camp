@@ -3,8 +3,6 @@
 import React from 'react'
 import { db } from '../firebase'
 import { collection, DocumentData, getDocs } from 'firebase/firestore'
-import { format } from 'date-fns'
-import { Timestamp } from 'firebase/firestore'
 
 const RegistarationsList = () => {
   const [documents, setDocuments] = React.useState<Document[]>([])
