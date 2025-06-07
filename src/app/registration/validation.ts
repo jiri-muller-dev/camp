@@ -21,7 +21,7 @@ const isValidPhoneNumber = (phone:string) => {
 export default async function sendRegistration(_: unknown, formData: FormData) {
   const formValues = {
     fullname: String(formData.get("fullname")),
-    dateofbirth: formData.get("dateofbirth"),
+    dateofbirth: String(formData.get("dateofbirth")),
     email: String(formData.get("email")),
     phonenumber: String(formData.get("phonenumber")),
   };
@@ -34,7 +34,7 @@ export default async function sendRegistration(_: unknown, formData: FormData) {
     };
   }
 
-  const dob = new Date(String(formData.get("dateofbirth")))
+  const dob = new Date(formValues.dateofbirth)
   if (isNaN(dob.getTime())) {
     return {
       success: false,

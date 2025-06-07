@@ -96,7 +96,7 @@ export default function Home() {
                   </p>
                   <p className="text-2xl text-center">for kids ages 12 to 17</p>
                   <p className="text-4xl text-center">10. 7. - 17. 7. 2025</p>
-                  <p className="text-2xl text-center">that's in</p>
+                  <p className="text-2xl text-center">that&apos;s in</p>
                   <Countdown targetDate={new Date(campStartDate)} />
                   <p className="text-2xl text-center mb-5">price is 5000 Kč</p>
 

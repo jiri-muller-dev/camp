@@ -6,7 +6,7 @@ interface FieldProps {
   type?: string;
   fieldName: string;
   required?: boolean;
-  defaultValue: any;
+  defaultValue: string | undefined;
 }
 
 const FormField: React.FC<FieldProps> = ({

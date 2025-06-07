@@ -4,10 +4,6 @@ import React from "react";
 import sendRegistration from "./validation";
 import FormField from "../components/FormField";
 
-interface FormData {
-  [key: string]: string;
-}
-
 const Registration: React.FC = () => {
   const [formState, formAction] = React.useActionState(sendRegistration, null);
 
