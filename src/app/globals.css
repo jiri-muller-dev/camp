@@ -1,68 +1,72 @@
 @font-face {
-  font-family: "Indie Flower";
-  src: url("/IndieFlower.woff2") format("woff2"),
-    url("/IndieFlower.woff") format("woff");
+  font-family: 'Indie Flower';
+  src:
+    url('/IndieFlower.woff2') format('woff2'),
+    url('/IndieFlower.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Permanent Marker";
-  src: url("/PermanentMarker-Regular.woff2") format("woff2"),
-    url("/PermanentMarker-Regular.woff") format("woff");
+  font-family: 'Permanent Marker';
+  src:
+    url('/PermanentMarker-Regular.woff2') format('woff2'),
+    url('/PermanentMarker-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Trade Winds";
-  src: url("/TradeWinds.woff2") format("woff2"),
-    url("/TradeWinds.woff") format("woff");
+  font-family: 'Trade Winds';
+  src:
+    url('/TradeWinds.woff2') format('woff2'),
+    url('/TradeWinds.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-display: "Trade Winds", system-ui;
-  --font-marker: "Permanent Marker", cursive;
-  --font-sans: "Indie Flower", cursive;
+  --font-display: 'Trade Winds', system-ui;
+  --font-marker: 'Permanent Marker', cursive;
+  --font-sans: 'Indie Flower', cursive;
 }
 
 @layer base {
   h1 {
-    @apply text-3xl font-display;
+    @apply font-display text-3xl;
   }
   h2 {
-    @apply text-2xl font-marker sm:text-4xl text-gray-900 font-semibold;
+    @apply font-marker text-2xl font-semibold text-gray-900 sm:text-4xl;
     scroll-margin-top: 86px;
   }
   h3 {
     @apply text-lg font-bold;
   }
   p {
-    @apply text-xl sm:text-2xl text-justify;
+    @apply text-justify text-xl sm:text-2xl;
   }
   ul {
-    @apply bg-[hsl(226.7,20.9%,98%)] text-xl text-left px-4 py-2;
+    @apply bg-[hsl(226.7,20.9%,98%)] px-4 py-2 text-left text-xl;
   }
   li {
-    @apply list-disc list-inside;
+    @apply list-inside list-disc;
   }
 }
 
 @layer components {
   .navbutton {
-    @apply uppercase font-marker text-lg border-b-4 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-[#cbcfdd] mx-1.5 sm:mx-6;
+    @apply font-marker mx-1.5 border-b-4 border-transparent text-lg uppercase hover:border-[#cbcfdd] hover:text-gray-800 sm:mx-6 dark:hover:text-gray-200;
   }
   .btn {
-    @apply bg-white hover:bg-gray-100 text-gray-800 text-xl font-semibold py-2 px-4 border hover:border-2 m-[1px] hover:m-0 border-gray-400 rounded shadow transition duration-300 cursor-pointer;
+    @apply m-[1px] cursor-pointer rounded border border-gray-400 bg-white px-4 py-2 text-xl font-semibold text-gray-800 shadow transition duration-300 hover:m-0 hover:border-2 hover:bg-gray-100;
   }
   .mainimage {
     background-color: cyan;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
-      url("/tegan-mierle-fDostElVhN8-unsplash.jpg");
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
+      url('/tegan-mierle-fDostElVhN8-unsplash.jpg');
     background-position: center;
     color: white;
     height: 400px;

@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Navigation from "./components/Navigation";
+import type { Metadata } from 'next'
+import './globals.css'
+import Navigation from './components/Navigation'
 
 export const metadata: Metadata = {
-  title: "Camp",
-  description: "Youth camp registration",
-};
+  title: 'Camp',
+  description: 'Youth camp registration',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
@@ -25,5 +25,5 @@ export default function RootLayout({
         <div>{children}</div>
       </body>
     </html>
-  );
+  )
 }

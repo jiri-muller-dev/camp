@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react'
 
 interface FieldProps {
-  label: string;
-  placeholder?: string;
-  type?: string;
-  fieldName: string;
-  required?: boolean;
-  defaultValue: string | undefined;
+  label: string
+  placeholder?: string
+  type?: string
+  fieldName: string
+  required?: boolean
+  defaultValue: string | undefined
 }
 
 const FormField: React.FC<FieldProps> = ({
   label,
-  placeholder = "",
-  type = "text",
+  placeholder = '',
+  type = 'text',
   fieldName,
   defaultValue,
   required = false,
@@ -23,7 +23,7 @@ const FormField: React.FC<FieldProps> = ({
     name: fieldName,
     defaultValue,
     required,
-  };
+  }
 
   return (
     <>
@@ -32,10 +32,10 @@ const FormField: React.FC<FieldProps> = ({
       </label>
       <input
         {...inputProps}
-        className="bg-teal-100 focus:bg-green-100 border-b-2 border-black px-1 mb-3 sm:mb-0 font-mono"
+        className="mb-3 border-b-2 border-black bg-teal-100 px-1 font-mono focus:bg-green-100 sm:mb-0"
       />
     </>
-  );
-};
+  )
+}
 
-export default FormField;
+export default FormField

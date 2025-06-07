@@ -1,22 +1,22 @@
-"use client";
+'use client'
 
-import React from "react";
-import sendRegistration from "./validation";
-import FormField from "../components/FormField";
+import React from 'react'
+import sendRegistration from './validation'
+import FormField from '../components/FormField'
 
 const Registration: React.FC = () => {
-  const [formState, formAction] = React.useActionState(sendRegistration, null);
+  const [formState, formAction] = React.useActionState(sendRegistration, null)
 
   return (
     <main className="flex flex-col items-center">
-      <div className="font-serif p-6 mt-4 max-w-screen-md w-full bg-white">
+      <div className="mt-4 w-full max-w-screen-md bg-white p-6 font-serif">
         <h2>New registration</h2>
         {formState?.success !== true && (
           <div>
-            <p className="mt-2 text-base text-left">
+            <p className="mt-2 text-left text-base">
               Please pay attention to the following requirements:
             </p>
-            <ul className="bg-white/0 text-base p-0 mb-4">
+            <ul className="mb-4 bg-white/0 p-0 text-base">
               <li>Participant must be within 12 and 17 years of age.</li>
               <li>
                 Participant must be able physically and mentally able to
@@ -28,7 +28,7 @@ const Registration: React.FC = () => {
               </li>
             </ul>
             <form action={formAction}>
-              <div className="grid sm:grid-cols-[max-content_1fr] gap-y-1 mb-4 sm:gap-y-2">
+              <div className="mb-4 grid gap-y-1 sm:grid-cols-[max-content_1fr] sm:gap-y-2">
                 <h3 className="sm:col-span-2">Participant:</h3>
                 <FormField
                   label="Full name"
@@ -78,16 +78,16 @@ const Registration: React.FC = () => {
         )}
         {formState?.success && (
           <div>
-            <p className="mt-2 text-base text-left">
+            <p className="mt-2 text-left text-base">
               Your registration was successfuly sent to us! <br /> It is now
-              pending and we will send you email to{" "}
+              pending and we will send you email to{' '}
               <strong>{formState.values.email}</strong> once it is accepted.
             </p>
           </div>
         )}
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default Registration;
+export default Registration
