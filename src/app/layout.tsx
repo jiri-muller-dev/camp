@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="bg-[hsl(46,21%,83%)]">
         <div className="text-center">
           <img
-            src="/logo-v1-camp-thrive.png"
+            src="/logo-v2-camp-thrive.png"
             className="mx-auto my-4 max-h-40"
           />
         </div>
