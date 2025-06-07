@@ -16,26 +16,18 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: 'Trade Winds';
-  src:
-    url('/TradeWinds.woff2') format('woff2'),
-    url('/TradeWinds.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 @import 'tailwindcss';
 
 @theme {
-  --font-display: 'Trade Winds', system-ui;
   --font-marker: 'Permanent Marker', cursive;
   --font-sans: 'Indie Flower', cursive;
+  --color-bone: hsl(47, 21%, 83%);
+  --color-periwinkle: #cbcfdd;
 }
 
 @layer base {
   h1 {
-    @apply font-display text-3xl;
+    @apply font-marker text-3xl;
   }
   h2 {
     @apply font-marker text-2xl font-semibold text-gray-900 sm:text-4xl;
@@ -57,7 +49,7 @@
 
 @layer components {
   .navbutton {
-    @apply font-marker mx-1.5 border-b-4 border-transparent text-lg uppercase hover:border-[#cbcfdd] hover:text-gray-800 sm:mx-6 dark:hover:text-gray-200;
+    @apply font-marker hover:border-periwinkle mx-1.5 border-b-4 border-transparent text-lg uppercase hover:text-gray-800 sm:mx-6 dark:hover:text-gray-200;
   }
   .btn {
     @apply m-[1px] cursor-pointer rounded border border-gray-400 bg-white px-4 py-2 text-xl font-semibold text-gray-800 shadow transition duration-300 hover:m-0 hover:border-2 hover:bg-gray-100;

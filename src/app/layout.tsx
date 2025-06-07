@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-[hsl(46,21%,83%)]">
+      <body className="bg-bone">
         <div className="text-center">
           <img
             src="/logo-v2-camp-thrive.png"

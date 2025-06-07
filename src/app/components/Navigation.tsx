@@ -14,6 +14,7 @@ const Navigation: React.FC = () => {
       <button
         className="mx-auto block h-12 w-12 cursor-pointer p-1.5 transition duration-300 hover:opacity-70 md:hidden"
         onClick={toggleOpen}
+        title="Open menu"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +31,7 @@ const Navigation: React.FC = () => {
         </svg>
       </button>
       <div
-        className={`${isOpen ? 'block' : 'hidden'} container mx-auto flex max-w-screen-xl items-center justify-around p-6 whitespace-nowrap text-gray-600 capitalize transition duration-100 ease-out max-md:flex-col max-md:gap-6 md:block dark:text-gray-300`}
+        className={`${isOpen ? 'flex' : 'hidden'} container mx-auto flex max-w-screen-xl items-center justify-around p-6 whitespace-nowrap text-gray-600 capitalize transition duration-100 ease-out max-md:flex-col max-md:gap-6 md:flex dark:text-gray-300`}
       >
         <Link href="/#aim" className="navbutton">
           About camp
