@@ -141,11 +141,11 @@ export default function Home() {
               <div className="w-full">
                 <iframe
                   height="300px"
-                  frameborder="0"
+                  frameBorder="0"
                   className="w-full border-0"
-                  referrerpolicy="no-referrer-when-downgrade"
+                  referrerPolicy="no-referrer-when-downgrade"
                   src={mapKey}
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
