@@ -12,6 +12,9 @@ import Countdown from './components/Countdown'
 import { format } from 'date-fns'
 
 export default function Home() {
+  const apiKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY
+  const mapKey = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&maptype=satellite&q=73P7%2BVQG+Kestřany` ////
+
   return (
     <div className="text-center">
       <main className="flex flex-col items-center">
@@ -136,7 +139,14 @@ export default function Home() {
               </div>
 
               <div className="w-full">
-                <div className="h-[300px] w-full bg-white text-center">map</div>
+                <iframe
+                  height="300px"
+                  frameborder="0"
+                  className="w-full border-0"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src={mapKey}
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>

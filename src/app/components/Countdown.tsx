@@ -30,7 +30,7 @@ const Countdown: React.FC<{
     return timeLeft
   }
 
-  const [timeLeft, setTimeLeft] = React.useState<TimeLeft>(calculateTimeLeft())
+  const [timeLeft, setTimeLeft] = React.useState<TimeLeft | null>(null)
 
   React.useEffect(() => {
     const timerId = setInterval(() => {
@@ -42,11 +42,13 @@ const Countdown: React.FC<{
 
   return (
     <div>
-      <p className="mx-auto mb-4 w-fit rounded-lg bg-black px-4 py-1 text-center font-mono text-4xl text-white">
-        {timeLeft.days} : {timeLeft.hours.toString().padStart(2, '0')} :{' '}
-        {timeLeft.minutes.toString().padStart(2, '0')} :{' '}
-        {timeLeft.seconds.toString().padStart(2, '0')}
-      </p>
+      {timeLeft && (
+        <p className="mx-auto mb-4 w-fit rounded-lg bg-black px-4 py-1 text-center font-mono text-4xl text-white">
+          {timeLeft.days} : {timeLeft.hours.toString().padStart(2, '0')} :{' '}
+          {timeLeft.minutes.toString().padStart(2, '0')} :{' '}
+          {timeLeft.seconds.toString().padStart(2, '0')}
+        </p>
+      )}
     </div>
   )
 }
